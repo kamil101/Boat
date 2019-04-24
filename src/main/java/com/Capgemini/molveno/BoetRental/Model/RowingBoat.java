@@ -1,20 +1,27 @@
 package com.Capgemini.molveno.BoetRental.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@NamedQuery(name = "RowingBoat.countBoats",query = "Select Count(*) From RowingBoat")
 public class RowingBoat {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
     private long id;
+
     private int boatNumber;
     private double minPrice;
     private double actPrice;
     private int numberOfseats;
+    private String  status;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public long getId() {
         return id;

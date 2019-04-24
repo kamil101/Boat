@@ -16,23 +16,25 @@ public class RowingBoatService {
     @Autowired
     private RowingBoatRepository rowingBoatRepository;
 
-    public Iterable<RowingBoat> getAllRowingBoat() { return rowingBoatRepository.findAll(); }
+    public Iterable<RowingBoat> getAllRowingBoat() {
+        return rowingBoatRepository.findAll();
+    }
 
-    private Optional<RowingBoat> getOneRowingBoat(Long id){
+    private Optional<RowingBoat> getOneRowingBoat(Long id) {
         return rowingBoatRepository.findById(id);
     }
 
-    public RowingBoat saveRowingBoat(RowingBoat newRowingBoat){
+    public RowingBoat saveRowingBoat(RowingBoat newRowingBoat) {
         return rowingBoatRepository.save(newRowingBoat);
     }
 
-    public void deleteRowingBoat(@RequestParam Long id){
+    public void deleteRowingBoat(@RequestParam Long id) {
         rowingBoatRepository.deleteById(id);
     }
 
-    public RowingBoat getSingleRowingBoat(Long id){
+    public RowingBoat getSingleRowingBoat(Long id) {
         Optional<RowingBoat> rowingBoat = getOneRowingBoat(id);
-        if(rowingBoat.isPresent()){
+        if (rowingBoat.isPresent()) {
             return rowingBoat.get();
         }
         return new RowingBoat();
@@ -46,17 +48,27 @@ public class RowingBoatService {
         if (rowingBoat.getBoatNumber() == 0) {
             g.setBoatNumber(rowingBoat.getBoatNumber());
         }
-        if (rowingBoat.getNumberOfseats()==0) {
+        if (rowingBoat.getNumberOfseats() == 0) {
             g.setNumberOfseats(rowingBoat.getNumberOfseats());
         }
         if (rowingBoat.getActPrice() == 0) {
             g.setActPrice(rowingBoat.getActPrice());
         }
-        if (rowingBoat.getMinPrice()==0) {
+        if (rowingBoat.getMinPrice() == 0) {
+            g.setMinPrice(rowingBoat.getMinPrice());
         }
+        if (! rowingBoat.getStatus().equals("")) {
+            g.setStatus(rowingBoat.getStatus());
+        }
+
 
         rowingBoatRepository.save(g);
 
     }
 
+    //to count boats
+    public int countAll() {
+        return rowingBoatRepository.countBoats();
+
+    }
 }

@@ -7,4 +7,5 @@ import java.util.List;
 public interface ReservationRepository extends CrudRepository<Reservation,Long> {
     Iterable<Reservation> findAll();
     Reservation findById(long id);
+
 }

@@ -37,4 +37,16 @@ public class TripEndPoint {
     public Trip editTrip(@RequestBody @Valid @NotNull Trip editTrip){
         return tripService.saveTrip(editTrip);}
 
+    @PostMapping("/startTrip/{boatType}")
+    public Long editTrip(@PathVariable String boatType) {
+return tripService.startTrip(boatType);
+
+    }
+
+    @PostMapping("/endTrip/{boatNmr}")
+    public Long editTrip(@PathVariable int boatNmr) {
+        return tripService.endTrip(boatNmr);
+
+    }
+
 }

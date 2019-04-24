@@ -38,6 +38,9 @@ public class RowingBoatEndPoint {
     public RowingBoat editRowingBoat(@RequestBody @Valid @NotNull RowingBoat editRowingBoat){
         return rowingBoatService.saveRowingBoat(editRowingBoat);}
 
+    @GetMapping("/total-rowingboat")
+    public int countBoats(){
+        return rowingBoatService.countAll(); }
 
 
 }

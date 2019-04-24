@@ -1,22 +1,30 @@
 package com.Capgemini.molveno.BoetRental.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
+
 @Entity
+
 public class Trip {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
     private long id;
-    private LocalDateTime startDate;
-    private LocalDateTime endDate;
+    
+    private LocalDateTime startTime;
+    private LocalDateTime endTime;
     private  String tripStatus;
     private int persons;
+    private int boatNumber;
+
+    public long getBoatNumber() {
+        return boatNumber;
+    }
+
+    public void setBoatNumber(int boatNumber) {
+        this.boatNumber = boatNumber;
+    }
 
     public long getId() {
         return id;
@@ -26,27 +34,27 @@ public class Trip {
         this.id = id;
     }
 
-    public LocalDateTime getStartDate() {
-        return startDate;
+    public LocalDateTime getStartTime() {
+        return startTime;
     }
 
-    public void setStartDate(LocalDateTime startDate) {
-        this.startDate = startDate;
+    public void setStartTime(LocalDateTime startTime) {
+        this.startTime = startTime;
     }
 
-    public LocalDateTime getEndDate() {
-        return endDate;
+    public LocalDateTime getEndTime() {
+        return endTime;
     }
 
-    public void setEndDate(LocalDateTime endDate) {
-        this.endDate = endDate;
-    }
-
-    public String getTripStatus() {
-        return tripStatus;
+    public void setEndTime(LocalDateTime endTime) {
+        this.endTime = endTime;
     }
 
     public void setTripStatus(String tripStatus) {
         this.tripStatus = tripStatus;
+    }
+
+    public String getTripStatus() {
+        return tripStatus;
     }
 }
