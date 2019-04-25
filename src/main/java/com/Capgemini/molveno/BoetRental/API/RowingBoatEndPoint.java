@@ -22,7 +22,11 @@ public class RowingBoatEndPoint {
 
     @PostMapping("/add-single-rowingboat")
     public RowingBoat saveRowingBoat(@RequestBody @Valid @NotNull RowingBoat newRowingBoat){
-        return rowingBoatService.saveRowingBoat(newRowingBoat);
+        System.out.println(newRowingBoat.getBoatNumber());
+        RowingBoat rb = rowingBoatService.saveRowingBoat(newRowingBoat);
+        System.out.println(rb.getId());
+        return rb;
+
     }
 
     @GetMapping("/get-single-rowingboat")

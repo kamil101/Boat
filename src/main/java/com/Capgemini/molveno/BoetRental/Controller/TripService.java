@@ -121,27 +121,39 @@ public class TripService {
 
 
     //new methos to end a trip
-    public Long endTrip(int boatNmr){
+    public Trip endTrip(int boatNmr){
 
         //to filter the DB by boatNumber and Status
         Trip trip = tripRepository.findByBoatNumberAndTripStatus( (boatNmr),"onGoingTrip");
+        RowingBoat boat = rowingBoatRepository.findById(boatNmr);
 
         //set endTime
         trip.setEndTime(LocalDateTime.now());
 
         //change the statue of trip
         trip.setTripStatus("Ended");
+        //need to make boat free
+        boat.setStatus("free");
+        rowingBoatRepository.save(boat);
+        //>><<
+
+
+
+        // to calc duration
+        Long min = Duration.between(trip.getStartTime(),trip.getEndTime()).getSeconds()/60;
+
+        //to calc price
+        double price = min * boat.getActPrice();
+        trip.setTripCost(price);
 
         //to save changes
         tripRepository.save(trip);
 
 
-        // to calc duration
-        Long duration = Duration.between(trip.getStartTime(),trip.getEndTime()).getSeconds()/60;
-        System.out.println(Duration.between(trip.getStartTime(),trip.getEndTime()).getSeconds()/60);
-        return duration;
+        //System.out.println(Duration.between(trip.getStartTime(),trip.getEndTime()).getSeconds()/60);
+        return trip;
 
-        //clac price
+
 
 
 

@@ -17,6 +17,15 @@ public class Trip {
     private  String tripStatus;
     private int persons;
     private int boatNumber;
+    private double tripCost;
+
+    public double getTripCost() {
+        return tripCost;
+    }
+
+    public void setTripCost(double tripCost) {
+        this.tripCost = tripCost;
+    }
 
     public long getBoatNumber() {
         return boatNumber;

@@ -37,4 +37,6 @@ public class ElectricalBoatsEndPoint {
     public ElectricalBoat editElectricalBoat(@RequestBody @Valid @NotNull ElectricalBoat editElectricalBoat){
         return electricalBoatService.saveElectricalBoat(editElectricalBoat);}
 
+
+
 }

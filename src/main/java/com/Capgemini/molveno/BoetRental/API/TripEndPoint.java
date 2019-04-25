@@ -44,7 +44,7 @@ return tripService.startTrip(boatType);
     }
 
     @PostMapping("/endTrip/{boatNmr}")
-    public Long editTrip(@PathVariable int boatNmr) {
+    public Trip editTrip(@PathVariable int boatNmr) {
         return tripService.endTrip(boatNmr);
 
     }

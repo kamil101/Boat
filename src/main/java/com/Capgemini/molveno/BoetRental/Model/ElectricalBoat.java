@@ -1,11 +1,9 @@
 package com.Capgemini.molveno.BoetRental.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@NamedQuery(name = "ElectricalBoat.countBoats",query = "Select Count(*) From ElectricalBoat")
 public class ElectricalBoat {
 
     @Id
