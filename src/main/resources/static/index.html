@@ -1,0 +1,255 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+</head>
+
+<body>
+<title>BoatRental</title>
+    <!-- navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="index.html">my index</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="trip.html">trips</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">start trip</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">end trip</a>
+      </li>
+    </ul>
+    <span class="navbar-text">
+      Navbar text with an inline element
+    </span>
+  </div>
+</nav>
+
+
+<h1 style="color:red">Welcome to boat rental page!</h1><br><br>
+
+<!-- Trips tabel -->
+
+<h3> Trips table</h3>
+
+<table class="table table-striped thead-dark">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">BoatNumber</th>
+      <th scope="col">StartTime</th>
+      <th scope="col">EndTime</th>
+      <th scope="col">TripCost</th>
+      <th scope="col">Status</th>
+
+
+    </tr>
+  </thead>
+  <tbody id="tabelBodyTrip">
+
+  </tbody>
+</table><br><br>
+
+<!-- Rowingboat tabel -->
+
+<h3> Rowingboat table</h3>
+
+<table class="table table-striped thead-dark">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">BoatNumber</th>
+    <th scope="col">MinPrice</th>
+    <th scope="col">ActPrice</th>
+    <th scope="col">NumberOfseats</th>
+    <th scope="col">Status</th>
+
+
+  </tr>
+  </thead>
+  <tbody id="tabelBodyBoat">
+
+  </tbody>
+</table>
+
+<!-- add rowing boat -->
+<!-- form for input -->
+<div class="container">
+  <h1>Add new rowingBoat</h1>
+<form>
+  <div class="form-group">
+    <label for="boatNumber">BoatNumber</label>
+    <input type="text" class="form-control" id="boatNumber" aria-describedby="boatNumberHelp" placeholder="Enter boatNumber">
+    <small id="boatNumberHelp" class="form-text text-muted">Enter your boatNumber please</small>
+  </div>
+  <div class="form-group">
+    <label for="minPrice">MinPrice</label>
+    <input type="text" class="form-control" id="minPrice" aria-describedby="minPriceHelp" placeholder="Enter minPrice">
+    <small id="minPriceHelp" class="form-text text-muted">Enter your minPrice please</small>
+  </div>
+  <div class="form-group">
+    <label for="actPrice">ActPrice</label>
+    <input type="text" class="form-control" id="actPrice" aria-describedby="actPriceHelp" placeholder="Enter actPrice">
+    <small id="actPriceHelp" class="form-text text-muted">Enter your actPrice please</small>
+  </div>
+  <div class="form-group">
+    <label for="numberOfseats">NumberOfseats</label>
+    <input type="text" class="form-control" id="numberOfseats" aria-describedby="numberOfseatsHelp" placeholder="Enter numberOfseats">
+    <small id="numberOfseatsHelp" class="form-text text-muted">Enter your numberOfseats please</small>
+  </div>
+  <div class="form-group">
+    <label for="status">Status</label>
+    <input type="text" class="form-control" id="status" aria-describedby="statusHelp" placeholder="Enter status">
+    <small id="statusHelp" class="form-text text-muted">Enter your status please</small>
+  </div>
+<!-- //onclick="rowingboat()" -->
+  <button type="submit" id="btn1"  class="btn btn-primary">Submit</button>
+</form>
+
+</div>
+
+
+
+<div class="container">
+  <h1>Edite rowingBoat</h1>
+  <form>
+    <div class="form-group">
+      <label for="boatNumber">BoatNumber</label>
+      <input type="text" class="form-control" id="boatNumber1" aria-describedby="boatNumberHelp" placeholder="Enter boatNumber">
+      <small id="boatNumberHelp1" class="form-text text-muted">Enter your boatNumber please</small>
+    </div>
+    <div class="form-group">
+      <label for="minPrice">MinPrice</label>
+      <input type="text" class="form-control" id="minPrice1" aria-describedby="minPriceHelp" placeholder="Enter minPrice">
+      <small id="minPriceHelp1" class="form-text text-muted">Enter your minPrice please</small>
+    </div>
+    <div class="form-group">
+      <label for="actPrice">ActPrice</label>
+      <input type="text" class="form-control" id="actPrice1" aria-describedby="actPriceHelp" placeholder="Enter actPrice">
+      <small id="actPriceHelp1" class="form-text text-muted">Enter your actPrice please</small>
+    </div>
+    <div class="form-group">
+      <label for="numberOfseats">NumberOfseats</label>
+      <input type="text" class="form-control" id="numberOfseats1" aria-describedby="numberOfseatsHelp" placeholder="Enter numberOfseats">
+      <small id="numberOfseatsHelp1" class="form-text text-muted">Enter your numberOfseats please</small>
+    </div>
+    <div class="form-group">
+      <label for="status">Status</label>
+      <input type="text" class="form-control" id="status1" aria-describedby="statusHelp" placeholder="Enter status">
+      <small id="statusHelp1" class="form-text text-muted">Enter your status please</small>
+    </div>
+
+    <button type="submit" onclick="rowingboat()" class="btn btn-primary">Submit</button>
+
+
+
+<script
+        src="https://code.jquery.com/jquery-3.4.0.min.js"
+        integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+        crossorigin="anonymous"></script>
+
+<script src="JS/javaScript.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+body {font-family: "Lato", sans-serif;}
+
+.sidebar {
+   height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: DodgerBlue
+;
+  overflow-x: hidden;
+  padding-top: 20px;
+
+}
+
+
+.sidebar a {
+  padding: 9px 8px 6px 16px;
+
+  text-decoration: none;
+  font-size: 20px;
+  color: #fff;
+  display: block;
+}
+#a1{
+padding-top: 50px
+}
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+
+  margin-left: 200px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+</style>
+</head>
+<body background="https://cdn.getyourguide.com/img/tour_img-180380-148.jpg">
+<title>BoatRental</title>
+<section>
+    <div class="sidebar">
+        <a href="#home"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a id="a1" href="addboat.html"><i class="fa fa-fw fa-wrench"></i>Add boat</a>
+        <a id="a1" href="Tripreservation.html"><i class="fa fa-fw fa-wrench"></i>Trip reservation</a>
+    </div>
+</section>
+<section>
+    <div class="main">
+        <h1 style="color: Tomato">Welcome to boat rental page!</h1>
+</section>
+</div>
+<script
+        src="https://code.jquery.com/jquery-3.4.0.min.js"
+        integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+        crossorigin="anonymous"></script>
+<script src="JS/javaScript.js"></script>-->

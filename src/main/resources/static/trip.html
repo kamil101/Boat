@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body >
+
+    <!-- navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="index.html">my index</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">all ongoing trips</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">start trip</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">end trip</a>
+      </li>
+    </ul>
+    <span class="navbar-text">
+      Navbar text with an inline element
+    </span>
+  </div>
+</nav>
+
+
+<div class="container">
+
+
+<!-- form for input -->
+<div class="container">
+  <h1>Add new rowingBoat</h1>
+<form>
+  <div class="form-group">
+    <label for="boatNumber">BoatNumber</label>
+    <input type="text" class="form-control" id="boatNumber" aria-describedby="boatNumberHelp" placeholder="Enter boatNumber">
+    <small id="boatNumberHelp" class="form-text text-muted">Enter your boatNumber please</small>
+  </div>
+  <div class="form-group">
+    <label for="minPrice">MinPrice</label>
+    <input type="text" class="form-control" id="minPrice" aria-describedby="minPriceHelp" placeholder="Enter minPrice">
+    <small id="minPriceHelp" class="form-text text-muted">Enter your minPrice please</small>
+  </div>
+  <div class="form-group">
+    <label for="actPrice">ActPrice</label>
+    <input type="text" class="form-control" id="actPrice" aria-describedby="actPriceHelp" placeholder="Enter actPrice">
+    <small id="actPriceHelp" class="form-text text-muted">Enter your actPrice please</small>
+  </div>
+  <div class="form-group">
+    <label for="numberOfseats">NumberOfseats</label>
+    <input type="text" class="form-control" id="numberOfseats" aria-describedby="numberOfseatsHelp" placeholder="Enter numberOfseats">
+    <small id="numberOfseatsHelp" class="form-text text-muted">Enter your numberOfseats please</small>
+  </div>
+  <div class="form-group">
+    <label for="status">Status</label>
+    <input type="text" class="form-control" id="status" aria-describedby="statusHelp" placeholder="Enter status">
+    <small id="statusHelp" class="form-text text-muted">Enter your status please</small>
+  </div>
+
+  <button type="submit" onclick="rowingboat()" class="btn btn-primary">Submit</button>
+</form>
+
+</div>
+
+
+
+
+  
+<!-- table for trips -->
+<!-- Trips tabel -->
+
+<h3> Trips table</h3>
+
+<table class="table table-striped thead-dark">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">BoatNumber</th>
+      <th scope="col">StartTime</th>
+      <th scope="col">EndTime</th>
+      <th scope="col">TripCost</th>
+      <th scope="col">Status</th>
+
+
+    </tr>
+  </thead>
+  <tbody id="tabelBody">
+
+  </tbody>
+</table>
+
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script
+        src="https://code.jquery.com/jquery-3.4.0.min.js"
+        integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+        crossorigin="anonymous"></script>
+
+<script src="JS/javaScript.js"></script>
+
+
+  </body>
+</html>
